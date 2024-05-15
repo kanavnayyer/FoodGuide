@@ -13,6 +13,16 @@
         android:src="@drawable/placeholder_image" />
 
     <TextView
+        android:id="@+id/mealLoction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        android:drawableLeft="@drawable/baseline_location_pin_24"
+        android:layout_marginBottom="10dp"
+        android:textStyle="bold" />
+
+    <TextView
         android:id="@+id/mealName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

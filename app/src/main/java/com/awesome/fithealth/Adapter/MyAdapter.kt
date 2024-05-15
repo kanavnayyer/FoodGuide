@@ -23,6 +23,7 @@ class MyAdapter(private val list: ArrayList<ViewModel>, private val itemClickLis
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
         val name: TextView = itemView.findViewById(R.id.mealName)
         val image: ImageView = itemView.findViewById(R.id.mealImage)
+        val location:TextView=itemView.findViewById(R.id.mealLoction)
 
         init {
             itemView.setOnClickListener(this)
@@ -40,6 +41,7 @@ class MyAdapter(private val list: ArrayList<ViewModel>, private val itemClickLis
         val item = list[position]
         holder.name.text = item.name
         holder.image.load(item.immgu)
+        holder.location.text=item.locationFood
     }
 
     override fun getItemCount(): Int {
@@ -50,33 +52,3 @@ class MyAdapter(private val list: ArrayList<ViewModel>, private val itemClickLis
         fun onItemClick(position: Int, item: ViewModel)
     }
 }
-//class MyAdapter( private var list:ArrayList<ViewModel>):RecyclerView.Adapter<MyAdapter.ViewHolder>() {
-//
-//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyAdapter.ViewHolder {
-//     val view=LayoutInflater.from(parent.context).inflate(R.layout.mealtext,parent,false)
-//   return ViewHolder(view)
-//    }
-//
-//    inner class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
-//        val name:TextView=itemView.findViewById(R.id.mealName)
-//        val image:ImageView=itemView.findViewById(R.id.mealImage)
-//
-//
-//    }
-//
-//    override fun onBindViewHolder(holder: MyAdapter.ViewHolder, position: Int) {
-//        val items=list[position]
-//holder.name.text=items.name
-//        holder.image.load(items.immgu)
-//
-//
-//
-//    }
-//
-//
-//
-//
-//    override fun getItemCount(): Int {
-//    return  list.size
-//    }
-//}

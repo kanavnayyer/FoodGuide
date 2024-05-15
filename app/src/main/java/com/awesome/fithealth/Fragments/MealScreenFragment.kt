@@ -57,8 +57,11 @@ class MealScreenFragment : Fragment(), MyAdapter.OnItemClickListener {
                             val mealObject = it.getJSONObject(i)
                             val mealName = mealObject.getString("strMeal")
                             val mealDescription = mealObject.getString("strInstructions")
-                            val mealImage = mealObject.getString("strMealThumb")
-                            mealList.add(ViewModel(mealName, mealDescription, mealImage))
+                           val mealImage = mealObject.getString("strMealThumb")
+                          val locationFood=mealObject.getString("strArea")
+//                            val youtubeVideo=mealObject.getString("strYoutube")
+
+                            mealList.add(ViewModel(mealName, mealDescription, mealImage,locationFood))
                         }
                     }
                 }
